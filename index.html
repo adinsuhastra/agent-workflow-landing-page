@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A self-made AI-assisted frontend demo showing a human-reviewed agent workflow dashboard.">
+  <title>AI Agent Workflow Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="AI Agent Workflow Dashboard home">
+      <span class="brand-mark">AW</span>
+      <span>Agent Workflow</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#workflow">Workflow</a>
+      <a href="#review">Review</a>
+      <a href="#prompt">Prompt</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Self-made AI-assisted portfolio demo</p>
+        <h1>AI Agent Workflow Dashboard</h1>
+        <p class="hero-text">
+          A simple responsive landing page that shows how a junior AI agent operator can turn a task into a reviewable frontend workflow with human checkpoints.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#workflow">View workflow</a>
+          <a class="button secondary" href="#review">Review checklist</a>
+        </div>
+      </div>
+
+      <aside class="status-panel" aria-label="Workflow readiness summary">
+        <div class="status-header">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Human-reviewed flow</span>
+        </div>
+        <div class="progress-block">
+          <div class="progress-label">
+            <span>Checklist progress</span>
+            <strong id="progressText">0 / 4</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+        <ul class="mini-list">
+          <li>No fake client claims</li>
+          <li>No paid tools or API keys</li>
+          <li>Static HTML, CSS, and JavaScript</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section intro" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">How this demo works</p>
+        <h2 id="intro-title">AI drafts, human judgment decides.</h2>
+      </div>
+      <p>
+        The workflow keeps AI assistance bounded: Codex or ChatGPT can help plan, draft, and inspect changes, but the final deliverable is checked by a human before it is treated as ready.
+      </p>
+    </section>
+
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Workflow steps</p>
+          <h2 id="workflow-title">From task intake to delivery report</h2>
+        </div>
+        <div class="filters" aria-label="Filter workflow cards">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="planning">Planning</button>
+          <button class="filter-button" type="button" data-filter="build">Build</button>
+          <button class="filter-button" type="button" data-filter="review">Review</button>
+        </div>
+      </div>
+
+      <div class="workflow-grid">
+        <article class="workflow-card" data-category="planning">
+          <span class="step-number">01</span>
+          <h3>Task Intake</h3>
+          <p>Clarify the requested outcome, constraints, approval rules, and any sensitive actions that require stopping first.</p>
+        </article>
+        <article class="workflow-card" data-category="planning">
+          <span class="step-number">02</span>
+          <h3>Repo Inspection</h3>
+          <p>Review the current files, structure, patterns, and local instructions before deciding how to change anything.</p>
+        </article>
+        <article class="workflow-card" data-category="build">
+          <span class="step-number">03</span>
+          <h3>AI Drafting</h3>
+          <p>Use AI to create a small draft, plan, or code change in reviewable steps instead of large unchecked output.</p>
+        </article>
+        <article class="workflow-card" data-category="review">
+          <span class="step-number">04</span>
+          <h3>Human Review</h3>
+          <p>Inspect content, code, links, claims, layout, and risk before accepting the AI-assisted draft as usable.</p>
+        </article>
+        <article class="workflow-card" data-category="review">
+          <span class="step-number">05</span>
+          <h3>Testing / Verification</h3>
+          <p>Run available checks, open the page locally, test interactions, and look for visible layout or text issues.</p>
+        </article>
+        <article class="workflow-card" data-category="review">
+          <span class="step-number">06</span>
+          <h3>Delivery Report</h3>
+          <p>Summarize what changed, what was verified, known limits, and the next approval step before publishing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-section" id="review" aria-labelledby="review-title">
+      <div>
+        <p class="eyebrow">Review checklist</p>
+        <h2 id="review-title">Toggle each check as you inspect the page.</h2>
+        <p>
+          This small interaction shows basic JavaScript state, accessibility-friendly controls, and a progress update.
+        </p>
+      </div>
+
+      <div class="checklist" aria-label="Human review checklist">
+        <label>
+          <input type="checkbox" class="review-check">
+          <span>Content does not claim fake client work.</span>
+        </label>
+        <label>
+          <input type="checkbox" class="review-check">
+          <span>Page is readable on mobile and desktop widths.</span>
+        </label>
+        <label>
+          <input type="checkbox" class="review-check">
+          <span>Buttons, filters, and prompt copy feature respond.</span>
+        </label>
+        <label>
+          <input type="checkbox" class="review-check">
+          <span>README and workflow notes explain the AI-assisted process.</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="section prompt-section" id="prompt" aria-labelledby="prompt-title">
+      <div>
+        <p class="eyebrow">Reusable workflow prompt</p>
+        <h2 id="prompt-title">Copy a starter prompt for a scoped AI task.</h2>
+      </div>
+      <div class="prompt-box">
+        <pre id="workflowPrompt">Inspect the project first, summarize what you find, propose a small plan, make the change in reviewable steps, then report what changed and how it was verified. Stop before publishing or taking irreversible actions.</pre>
+        <button class="button primary" id="copyPrompt" type="button">Copy prompt</button>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Portfolio demo by Adin. AI-assisted, human-reviewed, and not client work.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
